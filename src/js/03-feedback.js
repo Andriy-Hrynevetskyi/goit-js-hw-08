@@ -24,12 +24,14 @@ function setFormDataFromStorage() {
   try {
     const savedData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
-    if (savedData) {
+    if (savedData.email) {
       refs.feedbackFormInput.value = savedData.email;
+    }
+    if (savedData.message) {
       refs.feedbackFormTextArea.value = savedData.message;
     }
   } catch {
-    console.log(error);
+    console.log('error');
   }
 }
 
